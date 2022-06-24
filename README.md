@@ -2,7 +2,7 @@
 
 ## Usage
 
-Put multiple images into the directory with `vertical_img_combine.py` and run the python script.
+Put multiple images into the directory with `stitch_img_vertical.py` and run the python script.
 You can change the png to jpg or other image file types (I didn't try all of them).
 See example.
 
