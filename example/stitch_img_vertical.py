@@ -11,14 +11,14 @@ min_width = 2000
 min_height = 0
 pre_w = 0
 pre_h = 0
-ix =[]
+ix = []
 
 for img in list_im:
     im = Image.open(img)
     size = im.size
     w = size[0]
     h = size[1]
-    total_width += w 
+    total_width += w
     total_height += h
 
     if h > max_height:
@@ -29,24 +29,16 @@ for img in list_im:
         min_height = h
     if w < min_width:
         min_width = w
-    ix.append(im) 
-print("(total_width, total_height, max_width, max_height)")
-print((total_width, total_height, max_width, max_height))
-print("(min_width, max_width)")
-print((min_width, max_width))
+    ix.append(im)
 
-target_vertical = Image.new('RGB', (max_width, total_height))
+target_vertical = Image.new("RGB", (max_width, total_height))
 
 for img in ix:
-    target_vertical.paste(img, (pre_w, pre_h, pre_w+img.size[0], pre_h + img.size[1]))
+    target_vertical.paste(img, (pre_w, pre_h, pre_w + img.size[0], pre_h + img.size[1]))
     pre_h += img.size[1]
-    
-    
-#target_vertical.show()
-#target_vertical.save('COMBINED.png', quality=100)
+
 
 tw, th = target_vertical.size
-target_vertical.crop((0, 0, tw-(max_width-min_width), th)).save('CROPPED.png', quality=100)
-
-
-
+target_vertical.crop((0, 0, tw - (max_width - min_width), th)).save(
+    "new.png", quality=100
+)
