@@ -50,12 +50,11 @@ d = {}
 # print(list_im)
 for img in list_im:
     im = Image.open(img)
-    im_int = img.split('.')[0]
-    # im_int = img.split('_')[0] # for files named 0_June_26_2022.png, 1_June_26_2022.png, ... 
+    im_int = img.split(".")[0]
+    # im_int = img.split('_')[0] # for files named 0_June_26_2022.png, 1_June_26_2022.png, ...
     if im_int.isnumeric():
         d[img] = int(im_int)
 
-print(d)
 
 for img in sorted(d, key=d.get, reverse=False):
     im = Image.open(img)
@@ -76,7 +75,6 @@ for img in sorted(d, key=d.get, reverse=False):
     ix.append(im)
 
 
-
 target_vertical = Image.new("RGB", (max_width, total_height))
 
 for img in ix:
@@ -86,5 +84,5 @@ for img in ix:
 
 tw, th = target_vertical.size
 target_vertical.crop((0, 0, tw - (max_width - min_width), th)).save(
-    "new.png", quality=100
+    "result_sorted_combined.png", quality=100
 )
