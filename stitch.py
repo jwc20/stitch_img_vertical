@@ -13,38 +13,6 @@ pre_w = 0
 pre_h = 0
 ix = []
 
-"""
-Input: A bunch of images with names that have iterating number (0.png, 1.png, ...)
-
-list_im = ['8.png', '9.png', '14.png', '15.png', '17.png', '16.png', '12.png', '13.png',
- '11.png', '10.png', '20.png', '18.png', 'new.png', '19.png', '4.png', '5.png'
-, '7.png', '6.png', '2.png', '3.png', '1.png', '0.png']
-
-Output: Image stitched/combined vertically in that order.
-
-- The problem:
-    Currrently, the image combine the images in a random order. I want to change that.
-
-
-Constraints:
-    I have to split the strings inside list_im and convert them from string to int.
-    The names have to be numbers, if else, ignore.
-
-- I need to access the name of the image files. I cannot use the exif data/metadata since the screenshots I take with shareX does not store them.
-- This is an array problem.
-
-
-- Naive Approach:
-    Just use sort.
-    Make a list that is sorted by names.
-    Iterate through the new list and combine the images.
-    
-- Hashmap / hashset:
-    Iterate through list_im and store the key as the file name and value as the integer in the name. ( {"0.png": 0, "1.png": 1, ...} ) 
-    Sort by values in the hashmap.
-
-"""
-
 d = {}
 
 # print(list_im)
