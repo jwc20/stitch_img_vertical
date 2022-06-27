@@ -49,11 +49,14 @@ d = {}
 
 # print(list_im)
 for img in list_im:
-    im = Image.open(img)
-    im_int = img.split(".")[0]
-    # im_int = img.split('_')[0] # for files named 0_June_26_2022.png, 1_June_26_2022.png, ...
-    if im_int.isnumeric():
-        d[img] = int(im_int)
+
+    if "_" in img:
+        img_num = img.split("_")[0]
+    else:
+        img_num = img.split(".")[0]
+
+    if img_num.isnumeric():
+        d[img] = int(img_num)
 
 
 for img in sorted(d, key=d.get, reverse=False):
